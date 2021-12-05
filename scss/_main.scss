@@ -1,0 +1,21 @@
+.container{
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.qube{
+    width: 50%;
+    height: 50%;
+    background-color: #3a2b57;
+    border: 5px solid #ddd;
+    border-radius: 10px;
+
+    &.answer{
+        // opacity: .7;
+        background-color: #8576a2;
+    }
+}
