@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f06060;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  padding: 10px;
+  background-color: #ddd;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.qube.qube-2 {
+  width: 50%;
+  height: 50%;
+  background-color: #3a2b57;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+}
+
+.qube.qube-2.answer {
+  background-color: #8576a2;
+}
+
+.qube.qube-3 {
+  width: 160px;
+  height: 160px;
+  background-color: #1fc62d;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+}
+
+.qube.qube-3.answer {
+  opacity: .5;
+  background-color: #1fc62d;
+}
+
+.qube.qube-4 {
+  width: 120px;
+  height: 120px;
+  background-color: #d2af76;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+}
+
+.qube.qube-4.answer {
+  opacity: .5;
+  background-color: #d2af76;
+}
+
+.qube.qube-5 {
+  width: 96px;
+  height: 96px;
+  background-color: #af167b;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+}
+
+.qube.qube-5.answer {
+  opacity: .5;
+  background-color: #af167b;
+}
+
+.qube.qube-6 {
+  width: 80px;
+  height: 80px;
+  background-color: #973325;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+}
+
+.qube.qube-6.answer {
+  opacity: .5;
+  background-color: #973325;
+}
+
+.qube.qube-7 {
+  width: 68.57143px;
+  height: 68.57143px;
+  background-color: #881a5f;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+}
+
+.qube.qube-7.answer {
+  opacity: .5;
+  background-color: #881a5f;
+}
+
+.qube.qube-8 {
+  width: 60px;
+  height: 60px;
+  background-color: #584d38;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+}
+
+.qube.qube-8.answer {
+  opacity: .5;
+  background-color: #584d38;
+}
+
+.qube.qube-9 {
+  width: 53.33333px;
+  height: 53.33333px;
+  background-color: #866c9b;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+}
+
+.qube.qube-9.answer {
+  opacity: .5;
+  background-color: #866c9b;
+}
+/*# sourceMappingURL=all.css.map */

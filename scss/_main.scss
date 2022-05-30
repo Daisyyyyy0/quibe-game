@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 500px;
     height: 500px;
     padding: 10px;
@@ -7,15 +7,34 @@
     display: flex;
     flex-wrap: wrap;
 }
-.qube{
+
+.qube.qube-2 {
     width: 50%;
     height: 50%;
     background-color: #3a2b57;
     border: 5px solid #ddd;
     border-radius: 10px;
 
-    &.answer{
+    &.answer {
         // opacity: .7;
         background-color: #8576a2;
+    }
+}
+
+
+@for $i from 3 to 10 {
+    $randomColor: rgb(220*random(), 200*random(), 200*random());
+    
+    .qube.qube-#{$i} {
+        width: 480px/$i;
+        height: 480px/$i;
+        background-color: $randomColor;
+        border: 5px solid #ddd;
+        border-radius: 10px;
+
+        &.answer {
+            opacity: .5;
+            background-color: $randomColor;
+        }
     }
 }
