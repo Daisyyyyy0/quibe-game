@@ -1,0 +1,16 @@
+%flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%btnShape{
+    background-color: #f19494;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    color: white;
+}

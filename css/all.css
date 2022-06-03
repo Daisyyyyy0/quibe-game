@@ -1,3 +1,26 @@
+.dashboard, .pause, .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard > div, .pause {
+  background-color: #f19494;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,12 +44,32 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashboard {
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+}
+
+.dashboard > div {
+  width: auto;
+  padding: .5rem 1rem;
+}
+
+.pause {
+  padding: .75rem 1.5rem;
 }
 
 .container {
@@ -35,113 +78,16 @@ body {
   padding: 10px;
   background-color: #ddd;
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-.qube.qube-2 {
-  width: 50%;
-  height: 50%;
-  background-color: #3a2b57;
+.qube {
   border: 5px solid #ddd;
   border-radius: 10px;
 }
 
-.qube.qube-2.answer {
-  background-color: #8576a2;
-}
-
-.qube.qube-3 {
-  width: 160px;
-  height: 160px;
-  background-color: #1fc62d;
-  border: 5px solid #ddd;
-  border-radius: 10px;
-}
-
-.qube.qube-3.answer {
-  opacity: .5;
-  background-color: #1fc62d;
-}
-
-.qube.qube-4 {
-  width: 120px;
-  height: 120px;
-  background-color: #d2af76;
-  border: 5px solid #ddd;
-  border-radius: 10px;
-}
-
-.qube.qube-4.answer {
-  opacity: .5;
-  background-color: #d2af76;
-}
-
-.qube.qube-5 {
-  width: 96px;
-  height: 96px;
-  background-color: #af167b;
-  border: 5px solid #ddd;
-  border-radius: 10px;
-}
-
-.qube.qube-5.answer {
-  opacity: .5;
-  background-color: #af167b;
-}
-
-.qube.qube-6 {
-  width: 80px;
-  height: 80px;
-  background-color: #973325;
-  border: 5px solid #ddd;
-  border-radius: 10px;
-}
-
-.qube.qube-6.answer {
-  opacity: .5;
-  background-color: #973325;
-}
-
-.qube.qube-7 {
-  width: 68.57143px;
-  height: 68.57143px;
-  background-color: #881a5f;
-  border: 5px solid #ddd;
-  border-radius: 10px;
-}
-
-.qube.qube-7.answer {
-  opacity: .5;
-  background-color: #881a5f;
-}
-
-.qube.qube-8 {
-  width: 60px;
-  height: 60px;
-  background-color: #584d38;
-  border: 5px solid #ddd;
-  border-radius: 10px;
-}
-
-.qube.qube-8.answer {
-  opacity: .5;
-  background-color: #584d38;
-}
-
-.qube.qube-9 {
-  width: 53.33333px;
-  height: 53.33333px;
-  background-color: #866c9b;
-  border: 5px solid #ddd;
-  border-radius: 10px;
-}
-
-.qube.qube-9.answer {
-  opacity: .5;
-  background-color: #866c9b;
+.qube.answer {
+  opacity: 0.7;
 }
 /*# sourceMappingURL=all.css.map */
