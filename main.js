@@ -48,9 +48,9 @@ function answerSetting(){
             return
         }
         //當遊戲結束時，就不能再繼續遊戲了
-        if(time == 0){
-            // timeOver.textContent = 'Time Over'
-            // console.log('Time Over');
+        if(time <= 0){
+            timeOver.innerHTML = 'Time Over'
+            console.log('Time Over');
             return
         }
         //當按鈕被點擊的時候，分數就會增加一分
@@ -86,9 +86,12 @@ resetContainer();
 let countdown = setInterval(timeIsRunning, 10)   //計時器
 
 pauseBtn.addEventListener('click', function(){
+    if(time <= 0){
+        return
+    }
     if(pauseOrNot){
         clearInterval(countdown)
-        pauseBtn.innerHTML = `繼續撥放`
+        pauseBtn.innerHTML = `繼續遊戲`
         pauseOrNot = false
     }else {
         pauseBtn.innerHTML = `暫停`
@@ -105,6 +108,8 @@ function timeIsRunning() {
     //扣完時間後，確認是否時間到了
     if(time <= 0){
         clearInterval(countdown)
+        timeOver.innerHTML = 'Time Over'
+        console.log('Time Over');
     }
 }
 
