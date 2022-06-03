@@ -40,6 +40,17 @@
     }
 }
 
+.timeOver{
+    position: absolute;
+    font-size: 12rem;
+    font-weight: 700;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(54, 32, 133);
+    @media screen and(max-width:920px) {
+        font-size: 8rem;
+    }
+}
+
 // .qube.qube-2 {
 //     width: 50%;
 //     height: 50%;

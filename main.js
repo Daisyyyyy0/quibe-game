@@ -3,12 +3,15 @@ const container = document.querySelector('.container');
 const scoreElememt = document.querySelector('.score')
 const timerElement = document.querySelector('.timer')
 const pauseBtn = document.querySelector('.pause')
+const timeOver = document.querySelector('.timeOver')
 
 let edge = 2;  //假設邊長為2個方形
-let times = [1,1,2,3,4,4,5,5,5,5]   //每一關(難度)玩幾次，索引直0,1隨意填  
+let times = [1,1,2,3,4,5,6,7,8,6]   //每一關(難度)玩幾次，索引直0,1隨意填  
 let count = 1  // 計算一關玩幾次(當前難度遊玩次數)
 let score = 0
 let time = 60
+let pauseOrNot = true
+// let gameOver = false
 
 function createQubes(){
     let qubes = ''; 
@@ -40,6 +43,16 @@ function createQubes(){
 function answerSetting(){
     const answerQube = document.querySelector('.qube.answer');
     answerQube.addEventListener('click', function(){
+        //如果遊戲被暫停，就要block 掉你方塊的點擊行為
+        if(!pauseOrNot){
+            return
+        }
+        //當遊戲結束時，就不能再繼續遊戲了
+        if(time == 0){
+            // timeOver.textContent = 'Time Over'
+            // console.log('Time Over');
+            return
+        }
         //當按鈕被點擊的時候，分數就會增加一分
         score += 1
         scoreElememt.innerHTML = `分數: ${score}分`
@@ -66,31 +79,12 @@ function resetContainer(){
     console.log('edge',edge)
 }
 
-function stopResetContainer(){
-    return
-
-}
-
-
 resetContainer();
-console.log('time', time);
+// console.log('time', time);
 
 
+let countdown = setInterval(timeIsRunning, 10)   //計時器
 
-
-let countdown = setInterval(function timeIsRunning() {
-    time -=  0.01
-    time = time.toFixed(2)
-    timerElement.innerHTML = `剩餘: ${time}秒`
-
-    //扣完時間後，確認是否時間到了
-    if(time <= 0){
-        clearInterval(countdown)
-        stopResetContainer()
-    }
-}, 10)
-
-let pauseOrNot = true
 pauseBtn.addEventListener('click', function(){
     if(pauseOrNot){
         clearInterval(countdown)
@@ -98,31 +92,21 @@ pauseBtn.addEventListener('click', function(){
         pauseOrNot = false
     }else {
         pauseBtn.innerHTML = `暫停`
-        countdown = setInterval(function timeIsRunning() {
-            time -=  0.01
-            time = time.toFixed(2)
-            timerElement.innerHTML = `剩餘: ${time}秒`
-            //扣完時間後，確認是否時間到了
-            if(time <= 0){
-                clearInterval(countdown)
-            }
-            pauseOrNot = true
-        }, 10)
-        stopResetContainer()
-
+        countdown = setInterval(timeIsRunning, 10)
+        pauseOrNot = true
     }
 })
 
-// function timeIsRunning() {
-//     time -=  0.01
-//     time = time.toFixed(2)
-//     timerElement.innerHTML = `剩餘: ${time}秒`
+function timeIsRunning() {
+    time -=  0.01
+    time = time.toFixed(2)
+    timerElement.innerHTML = `剩餘: ${time}秒`
 
-//     //扣完時間後，確認是否時間到了
-//     if(time <= 0){
-//         clearInterval(countdown)
-//     }
-// }
+    //扣完時間後，確認是否時間到了
+    if(time <= 0){
+        clearInterval(countdown)
+    }
+}
 
 
 
@@ -132,8 +116,3 @@ pauseBtn.addEventListener('click', function(){
 // 4.計分
 // 5.計時
 // 6.暫停
-
-
-//遇到一個聞題:
-// ln75 & ln 95不能將timeIsRunning直接寫在外面獨立一個function timeIsRunning()，不知道為什麼
-//時間暫停之後，不知道如何讓遊戲不能繼續進行

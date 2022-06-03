@@ -90,4 +90,18 @@ body {
 .qube.answer {
   opacity: 0.7;
 }
+
+.timeOver {
+  position: absolute;
+  font-size: 12rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #362085;
+}
+
+@media screen and (max-width: 920px) {
+  .timeOver {
+    font-size: 8rem;
+  }
+}
 /*# sourceMappingURL=all.css.map */
