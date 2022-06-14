@@ -1,4 +1,4 @@
-.dashboard, .pause, .container {
+.dashboard, .pause, .container, .timeOver {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,6 +93,13 @@ body {
 
 .timeOver {
   position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.timeOver__text {
   font-size: 12rem;
   font-weight: 700;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -100,8 +107,21 @@ body {
 }
 
 @media screen and (max-width: 920px) {
-  .timeOver {
+  .timeOver__text {
     font-size: 8rem;
   }
+}
+
+.timeOver__restart {
+  position: relative;
+  top: 2rem;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: .75rem 2rem;
+  border-radius: 2rem;
+  border: 3px white solid;
+  background-color: #dace26;
 }
 /*# sourceMappingURL=all.css.map */

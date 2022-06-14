@@ -108,9 +108,20 @@ function timeIsRunning() {
     //扣完時間後，確認是否時間到了
     if(time <= 0){
         clearInterval(countdown)
-        timeOver.innerHTML = 'Time Over'
+        timeOver.innerHTML = `
+            <div class="timeOver__text">
+                Time Over
+            </div>
+            <div class="timeOver__restart">
+                restart
+            </div>
+        `
         console.log('Time Over');
     }
+}
+
+function restart() {
+    
 }
 
 
@@ -121,3 +132,4 @@ function timeIsRunning() {
 // 4.計分
 // 5.計時
 // 6.暫停
+// 7.重新開始遊戲 
