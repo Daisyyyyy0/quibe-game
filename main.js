@@ -4,6 +4,7 @@ const scoreElememt = document.querySelector('.score')
 const timerElement = document.querySelector('.timer')
 const pauseBtn = document.querySelector('.pause')
 const timeOver = document.querySelector('.timeOver')
+const restartBtn = document.querySelector('.timeOver__restart')
 
 let edge = 2;  //假設邊長為2個方形
 let times = [1,1,2,3,4,5,6,7,8,6]   //每一關(難度)玩幾次，索引直0,1隨意填  
@@ -18,9 +19,9 @@ function createQubes(){
     let answer = Math.floor( Math.random()*edge **2 ) //0~(總數-1)的隨機數
     // console.log('answer',answer);
     let qubeSize = 100 / edge
-    let r = 10 + Math.floor(Math.random() * 200 )  //產生RGB的三色數值
-    let g = 10 + Math.floor(Math.random() * 200 )
-    let b = 10 + Math.floor(Math.random() * 200 )
+    let r = 10 + Math.floor(Math.random() * 185 )  //產生RGB的三色數值
+    let g = 10 + Math.floor(Math.random() * 210 )
+    let b = 10 + Math.floor(Math.random() * 210 )
     let style = `style="width:${qubeSize}%; 
                         height:${qubeSize}%; 
                         background-color:rgb(${r}, ${g}, ${b});
@@ -83,23 +84,8 @@ resetContainer();
 // console.log('time', time);
 
 
+
 let countdown = setInterval(timeIsRunning, 10)   //計時器
-
-pauseBtn.addEventListener('click', function(){
-    if(time <= 0){
-        return
-    }
-    if(pauseOrNot){
-        clearInterval(countdown)
-        pauseBtn.innerHTML = `繼續遊戲`
-        pauseOrNot = false
-    }else {
-        pauseBtn.innerHTML = `暫停`
-        countdown = setInterval(timeIsRunning, 10)
-        pauseOrNot = true
-    }
-})
-
 function timeIsRunning() {
     time -=  0.01
     time = time.toFixed(2)
@@ -120,9 +106,34 @@ function timeIsRunning() {
     }
 }
 
-function restart() {
-    
+function restart() {    
+    let edge = 2;  
+    let times = [1,1,2,3,4,5,6,7,8,6]   
+    let count = 1 
+    let score = 0
+    let time = 60
+    let pauseOrNot = true
+    resetContainer();
 }
+
+pauseBtn.addEventListener('click', function(){
+    if(time <= 0){
+        return
+    }
+    if(pauseOrNot){
+        clearInterval(countdown)
+        pauseBtn.innerHTML = `繼續遊戲`
+        pauseOrNot = false
+    }else {
+        pauseBtn.innerHTML = `暫停`
+        countdown = setInterval(timeIsRunning, 10)
+        pauseOrNot = true
+    }
+})
+
+if(restartBtn){
+    restartBtn.addEventListener('click', restart, false)
+}  //js始終抓不到restartBtn
 
 
 
