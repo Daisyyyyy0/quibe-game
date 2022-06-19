@@ -4,6 +4,7 @@ const scoreElememt = document.querySelector('.score')
 const timerElement = document.querySelector('.timer')
 const pauseBtn = document.querySelector('.pause')
 const timeOver = document.querySelector('.timeOver')
+const restartBtn = document.querySelector('.timeOver__restart')
 
 let edge = 2;  //假設邊長為2個方形
 let times = [1,1,2,3,4,5,6,7,8,6]   //每一關(難度)玩幾次，索引直0,1隨意填  
@@ -87,18 +88,18 @@ function timeIsRunning() {
     timerElement.innerHTML = `剩餘: ${time}秒`
 
     //扣完時間後，確認是否時間到了
-    if(time <= 50){
+    if(time <= 0){
         clearInterval(countdown)
-        timeOver.innerHTML = `
-            <div class="timeOver__text">
-                Time Over
-            </div>
-            <div class="timeOver__restart">
-                restart
-            </div>
-        `
+        timeOver.classList.add('active')
+        // timeOver.innerHTML = `
+        //     <div class="timeOver__text">
+        //         Time Over
+        //     </div>
+        //     <div class="timeOver__restart">
+        //         restart
+        //     </div>
+        // `
         console.log('Time Over');
-        const restartBtn = document.querySelector('.timeOver__restart')
         console.log('restartBtn', restartBtn);
         if(restartBtn){
             restartBtn.addEventListener('click', restart, false)
@@ -107,14 +108,16 @@ function timeIsRunning() {
 }
 
 function restart() {    
-    let edge = 2;  
-    let times = [1,1,2,3,4,5,6,7,8,6]   
-    let count = 1 
-    let score = 0
-    let time = 60
-    let pauseOrNot = true
+    edge = 2;  
+    times = [1,1,2,3,5,5,6,7,8,9]   
+    count = 1 
+    score = 0
+    time = 60
+    pauseOrNot = true
     console.log('restartBtn', restartBtn);
+    timeOver.classList.remove('active')
     resetContainer();
+    countdown = setInterval(timeIsRunning, 10)  
 }
 
 resetContainer();

@@ -106,6 +106,7 @@ body {
 }
 
 .timeOver {
+  display: none;
   position: absolute;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -129,6 +130,12 @@ body {
 @media screen and (max-width: 680px) {
   .timeOver__text {
     font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .timeOver__text {
+    font-size: 5rem;
   }
 }
 
@@ -159,5 +166,17 @@ body {
   border: 3px white solid;
   background-color: #e6d02e;
   cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .timeOver__restart {
+    font-size: 1.5rem;
+  }
+}
+
+.timeOver.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=all.css.map */

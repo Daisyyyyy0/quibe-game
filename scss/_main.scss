@@ -49,6 +49,7 @@
 }
 
 .timeOver{
+    display: none;
     position: absolute;
     @extend %flexCenter;
     flex-direction: column;
@@ -62,6 +63,9 @@
         }
         @media screen and(max-width:680px) {
             font-size: 6rem;
+        }
+        @media screen and(max-width:540px) {
+            font-size: 5rem;
         }
         @media screen and(max-width:450px) {
             font-size: 4.5rem;
@@ -85,8 +89,14 @@
         border: 3px white solid;
         background-color: rgb(230, 208, 46);
         cursor: pointer;
+        @media screen and(max-width:450px) {
+            font-size: 1.5rem;
+        }
     }
+}
 
+.timeOver.active{
+    display:flex;
 }
 
 // .qube.qube-2 {
