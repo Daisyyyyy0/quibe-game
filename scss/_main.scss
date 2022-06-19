@@ -61,7 +61,10 @@
             font-size: 8rem;
         }
         @media screen and(max-width:680px) {
-            font-size: 5rem;
+            font-size: 6rem;
+        }
+        @media screen and(max-width:450px) {
+            font-size: 4.5rem;
         }
         @media screen and(min-width:1200px) {
             font-size: 12rem;

@@ -79,10 +79,6 @@ function resetContainer(){
     console.log('edge',edge)
 }
 
-resetContainer();
-// console.log('time', time);
-
-
 
 let countdown = setInterval(timeIsRunning, 10)   //計時器
 function timeIsRunning() {
@@ -91,7 +87,7 @@ function timeIsRunning() {
     timerElement.innerHTML = `剩餘: ${time}秒`
 
     //扣完時間後，確認是否時間到了
-    if(time <= 0){
+    if(time <= 50){
         clearInterval(countdown)
         timeOver.innerHTML = `
             <div class="timeOver__text">
@@ -103,10 +99,10 @@ function timeIsRunning() {
         `
         console.log('Time Over');
         const restartBtn = document.querySelector('.timeOver__restart')
+        console.log('restartBtn', restartBtn);
         if(restartBtn){
             restartBtn.addEventListener('click', restart, false)
         }  //js始終抓不到restartBtn （null狀態）
-
     }
 }
 
@@ -117,8 +113,13 @@ function restart() {
     let score = 0
     let time = 60
     let pauseOrNot = true
+    console.log('restartBtn', restartBtn);
     resetContainer();
 }
+
+resetContainer();
+console.log('time', time);
+
 
 pauseBtn.addEventListener('click', function(){
     if(time <= 0){
