@@ -116,6 +116,7 @@ function restart() {
     pauseOrNot = true
     console.log('restartBtn', restartBtn);
     timeOver.classList.remove('active')
+    scoreElememt.innerHTML = `分數: ${score}分`
     resetContainer();
     countdown = setInterval(timeIsRunning, 10)  
 }
