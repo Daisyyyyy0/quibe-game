@@ -82,6 +82,20 @@ body {
       flex-wrap: wrap;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .container {
+    width: 355px;
+    height: 355px;
+  }
+}
+
 .qube {
   border: 5px solid #ddd;
   border-radius: 10px;
@@ -100,7 +114,7 @@ body {
 }
 
 .timeOver__text {
-  font-size: 12rem;
+  font-size: 10rem;
   font-weight: 700;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #362085;
@@ -109,6 +123,12 @@ body {
 @media screen and (max-width: 920px) {
   .timeOver__text {
     font-size: 8rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .timeOver__text {
+    font-size: 12rem;
   }
 }
 

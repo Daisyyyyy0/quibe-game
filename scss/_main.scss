@@ -25,6 +25,14 @@
     background-color: #ddd;
     border-radius: 10px;
     flex-wrap: wrap;
+    @media screen and(max-width:768px) {
+        width: 400px;
+        height: 400px;
+    }
+        @media screen and(max-width:420px) {
+            width: 355px;
+            height: 355px;
+        }
 }
 
 .qube{
@@ -45,12 +53,15 @@
     @extend %flexCenter;
     flex-direction: column;
     &__text{
-        font-size: 12rem;
+        font-size: 10rem;
         font-weight: 700;
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(54, 32, 133);
         @media screen and(max-width:920px) {
             font-size: 8rem;
+        }
+        @media screen and(min-width:1200px) {
+            font-size: 12rem;
         }
     }
     &__restart{
