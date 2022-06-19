@@ -4,7 +4,6 @@ const scoreElememt = document.querySelector('.score')
 const timerElement = document.querySelector('.timer')
 const pauseBtn = document.querySelector('.pause')
 const timeOver = document.querySelector('.timeOver')
-const restartBtn = document.querySelector('.timeOver__restart')
 
 let edge = 2;  //假設邊長為2個方形
 let times = [1,1,2,3,4,5,6,7,8,6]   //每一關(難度)玩幾次，索引直0,1隨意填  
@@ -103,6 +102,11 @@ function timeIsRunning() {
             </div>
         `
         console.log('Time Over');
+        const restartBtn = document.querySelector('.timeOver__restart')
+        if(restartBtn){
+            restartBtn.addEventListener('click', restart, false)
+        }  //js始終抓不到restartBtn （null狀態）
+
     }
 }
 
@@ -131,9 +135,6 @@ pauseBtn.addEventListener('click', function(){
     }
 })
 
-if(restartBtn){
-    restartBtn.addEventListener('click', restart, false)
-}  //js始終抓不到restartBtn
 
 
 
