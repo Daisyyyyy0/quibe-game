@@ -1,5 +1,4 @@
 const container = document.querySelector('.container');
-
 const scoreElememt = document.querySelector('.score')
 const timerElement = document.querySelector('.timer')
 const pauseBtn = document.querySelector('.pause')
@@ -50,7 +49,6 @@ function answerSetting(){
         }
         //當遊戲結束時，就不能再繼續遊戲了
         if(time <= 0){
-            timeOver.innerHTML = 'Time Over'
             console.log('Time Over');
             return
         }
@@ -65,12 +63,6 @@ function answerSetting(){
             count += 1
         }
         resetContainer();
-        // if(edge < 9){
-        //     edge++;
-        //     resetContainer();
-        // }else if(edge===9){
-        //     resetContainer();
-        // }
     })
 }
 
@@ -79,9 +71,6 @@ function resetContainer(){
     answerSetting();
     console.log('edge',edge)
 }
-
-resetContainer();
-// console.log('time', time);
 
 
 
@@ -92,29 +81,40 @@ function timeIsRunning() {
     timerElement.innerHTML = `剩餘: ${time}秒`
 
     //扣完時間後，確認是否時間到了
-    if(time <= 0){
+    if(time <= 50){
         clearInterval(countdown)
-        timeOver.innerHTML = `
-            <div class="timeOver__text">
-                Time Over
-            </div>
-            <div class="timeOver__restart">
-                restart
-            </div>
-        `
+        timeOver.classList.add('active')
+        // timeOver.innerHTML = `
+        //     <div class="timeOver__text">
+        //         Time Over
+        //     </div>
+        //     <div class="timeOver__restart">
+        //         restart
+        //     </div>
+        // `
         console.log('Time Over');
+        if(restartBtn){
+            restartBtn.addEventListener('click', restart, false)
+        }  //js始終抓不到restartBtn
+        
     }
 }
 
 function restart() {    
-    let edge = 2;  
-    let times = [1,1,2,3,4,5,6,7,8,6]   
-    let count = 1 
-    let score = 0
-    let time = 60
-    let pauseOrNot = true
+    edge = 2;  
+    times = [1,1,2,3,4,5,6,7,8,6]   
+    count = 1 
+    score = 0
+    time = 60
+    pauseOrNot = true
+    console.log('restartBtn', restartBtn);
+    timeOver.classList.remove('active')
     resetContainer();
+    countdown = setInterval(timeIsRunning, 10) 
 }
+
+resetContainer();
+// console.log('time', time);
 
 pauseBtn.addEventListener('click', function(){
     if(time <= 0){
@@ -131,9 +131,8 @@ pauseBtn.addEventListener('click', function(){
     }
 })
 
-if(restartBtn){
-    restartBtn.addEventListener('click', restart, false)
-}  //js始終抓不到restartBtn
+
+
 
 
 

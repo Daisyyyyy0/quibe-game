@@ -25,6 +25,14 @@
     background-color: #ddd;
     border-radius: 10px;
     flex-wrap: wrap;
+    @media screen and(max-width:700px) {
+        width: 400px;
+        height: 400px;
+    }
+        @media screen and(max-width:420px) {
+            width: 355px;
+            height: 355px;
+        }
 }
 
 .qube{
@@ -41,16 +49,29 @@
 }
 
 .timeOver{
+    display: none;
     position: absolute;
     @extend %flexCenter;
     flex-direction: column;
     &__text{
-        font-size: 12rem;
+        font-size: 10rem;
         font-weight: 700;
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(54, 32, 133);
         @media screen and(max-width:920px) {
             font-size: 8rem;
+        }
+        @media screen and(max-width:680px) {
+            font-size: 6rem;
+        }
+        @media screen and(max-width:540px) {
+            font-size: 5rem;
+        }
+        @media screen and(max-width:450px) {
+            font-size: 4.5rem;
+        }
+        @media screen and(min-width:1200px) {
+            font-size: 12rem;
         }
     }
     &__restart{
@@ -59,42 +80,21 @@
         display: inline-block;
         font-size: 2.5rem;
         font-weight: 700;
+        font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+        color: #333;
+        letter-spacing: 2px;
         text-align: center;
         padding: .75rem 2rem;
         border-radius: 2rem;
         border: 3px white solid;
         background-color: rgb(230, 208, 46);
         cursor: pointer;
+        @media screen and(max-width:450px) {
+            font-size: 1.5rem;
+        }
     }
-
 }
 
-// .qube.qube-2 {
-//     width: 50%;
-//     height: 50%;
-//     background-color: #3a2b57;
-//     border: 5px solid #ddd;
-//     border-radius: 10px;
-
-//     &.answer {
-//         opacity:0.7;
-//         background-color: #8576a2;
-//     }
-// }
-
-// @for $i from 3 to 10 {
-//     $randomColor: rgb(220*random(), 200*random(), 200*random());
-    
-//     .qube.qube-#{$i} {
-//         width: 480px/$i;
-//         height: 480px/$i;
-//         background-color: $randomColor;
-//         border: 5px solid #ddd;
-//         border-radius: 10px;
-
-//         &.answer {
-//             opacity: .5;
-//             background-color: $randomColor;
-//         }
-//     }
-// }
+.timeOver.active{
+    display:flex;
+}
